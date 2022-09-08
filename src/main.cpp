@@ -5,20 +5,23 @@ using namespace Yak;
 
 Game *game = nullptr;
 Entity *player;
+Entity *enemy;
 
 void init()
 {
-    player = new Entity("/Users/sramirez/Documents/Development/SDL/SDL2Test/content/sprites");
+    player = new Entity("/content/sprites/player.png", 0, 0);
+    enemy = new Entity("/content/sprites/player.png", 50, 50);
 }
 
 void update()
 {
-    std::cout << "Totally working" << std::endl;
+    player->Update();
 }
 
 void render()
 {
-    // Renderer::DrawImage(player)
+    player->Render();
+    enemy->Render();
 }
 
 int main()
@@ -34,7 +37,7 @@ int main()
     game_config.OnUpdate = update;
     game_config.OnRender = render;
 
-    game->init(game_config);
-    game->run();
-    game->clean();
+    game->Init(game_config);
+    game->Run();
+    game->Clean();
 }
