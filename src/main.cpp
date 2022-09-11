@@ -1,4 +1,4 @@
-#include <yak.h>
+#include <yak.hpp>
 
 using namespace Yak;
 // using namespace MM;
@@ -15,8 +15,8 @@ void init()
 
 void update()
 {
-    player->Update();
-    enemy->Update();
+    player->Update(0.0);
+    enemy->Update(0.0);
 }
 
 void render()

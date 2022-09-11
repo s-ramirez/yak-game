@@ -1,8 +1,13 @@
 #pragma once
-#include <yak.h>
+#include <yak.hpp>
 
 using namespace Yak;
 
 class Player : public GameObject
 {
+public:
+    Player();
+
+private:
+    Animation *animation;
 }
