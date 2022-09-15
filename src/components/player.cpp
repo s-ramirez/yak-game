@@ -1,7 +1,26 @@
-#include <player.hpp>
+#include "player.hpp"
 
-Player::Player()
+Player::Player(GameObject &parent) : Component(parent)
 {
-    texture = new GameObject("/content/sprites/player.png", 0, 0);
-    animation = new Animation()
+    Animation *animation = new Animation(parent, "/content/sprites/player.png", 0, 0, 0);
+    parent.AddComponent(animation);
+}
+
+Player::~Player() {}
+
+void Player::Init()
+{
+}
+
+void Player::Update(float dt)
+{
+}
+
+void Player::Render()
+{
+}
+
+bool Player::Is(const std::string &type) const
+{
+    return type == std::string("Player");
 }

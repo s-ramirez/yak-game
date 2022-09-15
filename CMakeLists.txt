@@ -11,6 +11,7 @@ add_subdirectory(libs/yak)
 # add our source
 add_executable(game
 	src/main.cpp
+	src/components/player.cpp
  )
 
 # Reference engine

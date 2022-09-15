@@ -1,28 +1,30 @@
 #include <yak.hpp>
+#include "components/player.hpp"
 
 using namespace Yak;
 // using namespace MM;
 
 Game *game = nullptr;
-GameObject *player;
+GameObject *playerObj;
 GameObject *enemy;
 
 void init()
 {
-    player = new GameObject("/content/sprites/player.png", 0, 0);
-    enemy = new GameObject("/content/sprites/player.png", 50, 50);
+    playerObj = new GameObject();
+    Player *player = new Player(*playerObj);
+    playerObj->AddComponent(player);
 }
 
 void update()
 {
-    player->Update(0.0);
-    enemy->Update(0.0);
+    playerObj->Update(0.0);
+    // enemy->Update(0.0);
 }
 
 void render()
 {
-    player->Render();
-    enemy->Render();
+    playerObj->Render();
+    // enemy->Render();
 }
 
 int main()
